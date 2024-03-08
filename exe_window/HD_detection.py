@@ -417,7 +417,7 @@ class HD_Detection:
                     
                     # if int(id_cls_list[i].item()) == 0 and r.boxes.conf[i].item() < 0.4: continue
                     # if int(id_cls_list[i].item()) == 2 and r.boxes.conf[i].item() < 0.4: continue
-                    x, y, w, h = tensor_data[i].tolist()
+                    x, y, w, h = box_list[i].tolist()
                     position = f"{x},{y},{w},{h}"
                     predicted_label = self.label_dict[int(id_cls_list[i].item())]
                     # if predicted_label == "flag" and frame_num_list[idx]>self.stride:
@@ -511,5 +511,5 @@ class HD_Detection:
         capture_thread.join()
         predict_thread.join()
         print(f"Progress: {int(100)}%")
-        self.post_process_log(self.log_path)
+        #self.post_process_log(self.log_path)
         return self.log_path
