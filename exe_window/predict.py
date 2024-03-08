@@ -18,7 +18,7 @@ parser = argparse.ArgumentParser(description='Process some args.')
 
 # Add arguments
 parser.add_argument('video_path', metavar='video_path', type=str, help='path to input video')
-parser.add_argument('--model', type=str, default='model.pt', help='path to model.pt file')
+parser.add_argument('--model_path', type=str, default='model.pt', help='path to model.pt file')
 parser.add_argument('--model_resnet', type=str, default='flag_resnet18.pth', help='path to double check model')
 parser.add_argument('--conf', type=float, default=0.3, help='minimum confidence threshold for detection')
 parser.add_argument('--stride', type=int, default=5, help='frame stride for detection')
