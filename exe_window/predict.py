@@ -38,7 +38,7 @@ Detector = HD_Detection(video_path = args.video_path, \
                         conf = args.conf,      \
                         stride = args.stride,      \
                         run_on = args.run_on,      \
-                        timming_inspection = args.timing_inspection, \
+                        timing_inspection = args.timing_inspection, \
                         similarity_comparision = args.skip_similarity,  \
                         label_dict = label_dict
                         )
