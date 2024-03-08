@@ -430,7 +430,8 @@ class HD_Detection:
                     #             self.frames_need_to_be_recheck.append((frame_num_list[idx], box_list[i].tolist()))
                              
                     timecode = self.frame_to_timecode(frame_num_list[idx], self.video_FPS) 
-                    msg = f"[DETECTED]type=[{predicted_label}];timecode={timecode};position={position};confidence={round(r.boxes.conf[i].item(), 2)};frame={frame_num_list[idx]};w_h={width_height}"
+                    #msg = f"[DETECTED]type=[{predicted_label}];timecode={timecode};position={position};confidence={round(r.boxes.conf[i].item(), 2)};frame={frame_num_list[idx]};w_h={width_height}"
+                    msg = f"{frame_num_list[idx]};{predicted_label};{position};{round(r.boxes.conf[i].item(), 2)};{width_height}"
                     #print(msg)  
                     logging.info(msg)   
            
