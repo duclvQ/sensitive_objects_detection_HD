@@ -129,7 +129,8 @@ class KalmanBoxTracker(object):
     self.hits += 1
     self.hit_streak += 1
     self.kf.update(convert_bbox_to_z(bbox))
-
+  def reset(self,):
+    self.count = 0
   def predict(self):
     """
     Advances the state vector and returns the predicted bounding box estimate.
@@ -206,7 +207,8 @@ class Sort(object):
     self.iou_threshold = iou_threshold
     self.trackers = []
     self.frame_count = 0
-
+  def reset(self,):
+    KalmanBoxTracker.count = 0
   def update(self, dets=np.empty((0, 5))):
     """
     Params:
